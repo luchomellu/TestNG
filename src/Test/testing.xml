@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="suite_tp3" verbose="1">
+    <parameter name="tester-name" value="Lucho y Valen" />
+    <test name="Testeo que los ingredientes no tengan mas de 10 caracteres en el nombre">
+        <classes>
+            <class name="Test.IngredienteTest">
+                <methods>
+                    <include name="nombreIngredienteMaxCaracterAleatorio" />
+                    <include name="crearIngredienteSatisfactoriamente" />
+                </methods>
+                <parameter name="nombre" value="chilitoXml"></parameter>
+                <parameter name="medida" value="gramos"></parameter>
+                <parameter name="stock" value="1"></parameter>
+                <parameter name="precioCompra" value="300"></parameter>
+            </class>
+        </classes>
+    </test>
+    <test name="Testeo descontar stock">
+        <classes>
+            <class name="Test.StockOldTest">
+                <methods>
+                    <include name="checkStockMinimo" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Testeo descontar saldo">
+        <classes>
+            <class name="Test.UsuarioTest">
+                <methods>
+                    <include name="testDescontarSaldoUsuario" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
